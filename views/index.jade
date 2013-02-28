@@ -1,10 +1,35 @@
 extends layout
 
 block content
-  div(class='hero-unit')
-    h1= title
-    p(class='span5').
-      Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor
-    div(class='btn-group hero offset2 span1')
-      button(class='btn btn-info') Ingresa
-      button(class='btn btn-info') Registrare
+  div(class='container panel')    
+    div(class='row')
+      div(class='span4')
+        h1= title
+        p
+          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
+          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
+          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
+          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
+
+      div(class='offset1 span3')
+        fieldset
+          legend Ingresa
+          form(action='/autenticar', method='post')
+            label(for='user')
+              input(type='text', id='user', name='user', placeholder='Usuario')
+            label(for='pw')
+              input(type='password', id='pw', name='pw', placeholder='Contraseña')
+            button(class='btn btn-info') Entrar
+      
+    
+      div(class='offset0 span3')   
+        fieldset
+          legend Registrate
+          form(action='/registro', method='post')
+            label(for='n-user')
+              input(type='text', id='n-user', name='n-user', placeholder='Usuario')
+            label(for='n-pw')
+              input(type='password', id='n-pw', name='n-pw', placeholder='Contraseña')
+            label(for='n-email')
+              input(type='email', id='n-email', name='n-email', placeholder='Email')
+            button(class='btn btn-info') Registar     
