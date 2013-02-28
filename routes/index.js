@@ -41,19 +41,20 @@ exports.autenticar=  function(req, res){
 	var pw = req.body.pw;
   console.log(pw);
   console.log(user);
-	objBD.query('SELECT * FROM user WHERE nick LIKE "'+user+'" AND password LIKE "'+pw+'"', function(error, resultado, fila){
-	console.log('SELECT * FROM user WHERE nick LIKE "'+user+'" AND password LIKE "'+pw+'"');
-  if(!error) {
-	  console.log(resultado.length);
-	  if(resultado.length > 0){
-	    req.session.user = user;
-	    res.redirect('/usuario');
-	  }else{
-	    res.redirect('/login');
-	  }
-	}else{
-	  console.log('Error autenticar');
-	}
+	console.log('SELECT * FROM user WHERE nick ="'+user+'" AND password = "'+pw+'"');
+  objBD.query('SELECT * FROM user WHERE nick ="'+user+'" AND password = "'+pw+'"', function(error, resultado, fila){
+    
+    if(!error) {
+  	  console.log(resultado.length);
+  	  if(resultado.length > 0){
+  	    req.session.user = user;
+  	    res.redirect('/usuario');
+  	  }else{
+  	    res.redirect('/login');
+  	  }
+  	}else{
+  	  console.log('Error autenticar');
+  	}
 	});
 };
 
