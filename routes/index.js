@@ -3,7 +3,7 @@ var  mysql = require('mysql');
 function BD(){
   var cliente = mysql.createConnection({
     user: 'root',
-    password: 'nando',
+    password: '_vps_13',
     host: 'localhost',
     port: 3306,
     database: 'h'
