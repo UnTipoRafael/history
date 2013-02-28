@@ -1,0 +1,11 @@
+extends layout
+ 
+block content
+  h1= title
+  div
+    form(action='/autenticar', method='post')
+      label(for='user')
+         input(type='text', id='user', name='user', placeholder='Usuario')
+      label(for='pw')
+         input(type='password', id='pw', name='pw', placeholder='Contraseña')
+      button(type='submit') Ingresar
