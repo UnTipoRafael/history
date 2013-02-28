@@ -39,9 +39,11 @@ exports.autenticar=  function(req, res){
 	var objBD = BD();
 	var user = req.body.user;
 	var pw = req.body.pw;
+  console.log(pw);
   console.log(user);
 	objBD.query('SELECT * FROM user WHERE nick LIKE "'+user+'" AND password LIKE "'+pw+'"', function(error, resultado, fila){
-	if(!error) {
+	console.log('SELECT * FROM user WHERE nick LIKE "'+user+'" AND password LIKE "'+pw+'"');
+  if(!error) {
 	  console.log(resultado.length);
 	  if(resultado.length > 0){
 	    req.session.user = user;
