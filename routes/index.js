@@ -4,7 +4,7 @@ function BD(){
   var cliente = mysql.createConnection({
     user: 'root',
     password: '_vps_13',
-    host: '89.32.145.253',
+    host: 'localhost',
     port: 3306,
     database: 'h'
   });
@@ -39,6 +39,7 @@ exports.autenticar=  function(req, res){
 	var objBD = BD();
 	var user = req.body.user;
 	var pw = req.body.pw;
+  console.log(user);
 	objBD.query('SELECT * FROM user WHERE nick LIKE "'+user+'" AND password LIKE "'+pw+'"', function(error, resultado, fila){
 	if(!error) {
 	  console.log(resultado.length);
