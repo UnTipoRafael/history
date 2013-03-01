@@ -37,6 +37,7 @@ exports.salir= function(req, res){
 
 exports.autenticar=  function(req, res){
 	var objBD = BD();
+  console.log(objBD);
 	var user = req.body.user;
 	var pw = req.body.pw;
   console.log(pw);
