@@ -4,7 +4,7 @@ function BD(){
   var cliente = mysql.createConnection({
     user: 'root',
     password: '_vps_13',
-    host: 'localhost',
+    host: '127.0.0.1',
     port: 3306,
     database: 'h'
   });
