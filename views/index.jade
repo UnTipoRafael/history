@@ -6,22 +6,23 @@ block content
       div(class='span4')
         h1= title
         p
-          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
-          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
-          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
-          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas historias con gran valor narra tu propia historia y cuantala a el mundo
-          div(class='btn-group')
-            button(class='btn btn-info') FB
-            button(class='btn btn-info') TW
-            button(class='btn btn-info') G+
+          |Comparte tus historias y de tu localidad, cuentos, noticias de interes, pequemas
+          | historias con gran valor narra tu propia historia y cuantala a el mundo
+        div(id='map-all', class='span9')
+          div(id="map_canvas", style='width:100%; height:100%')
+            
+        div(class='btn-group')
+          button(class='btn btn-info') FB
+          button(class='btn btn-info') TW
+          button(class='btn btn-info') G+
       div(class='offset1 span3')
         fieldset
           legend Ingresa
           form(action='/autenticar', method='post')
             label(for='user')
-              input(type='text', id='user', name='user', placeholder='Usuario')
+              input(type='text', id='user', name='user', placeholder='Usuario' ,required)
             label(for='pw')
-              input(type='password', id='pw', name='pw', placeholder='Contraseña')
+              input(type='password', id='pw', name='pw', placeholder='Contraseña',required)
             button(class='btn btn-info') Entrar
       
     
@@ -31,13 +32,13 @@ block content
           legend Registrate
           form(action='/registro', method='post')
             label(for='n-user')
-              input(type='text', id='n-user', name='n_user', placeholder='Usuario')
+              input(type='text', id='n-user', name='n_user', placeholder='Usuario', required)
             label(for='n-pw')
-              input(type='password', id='n-pw', name='n_pw', placeholder='Contraseña')
+              input(type='password', id='n-pw', name='n_pw', placeholder='Contraseña', required)
             label(for='n-email')
-              input(type='email', id='n-email', name='n_email', placeholder='Email')
+              input(type='email', id='n-email', name='n_email', placeholder='Email', pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", required)
             button(class='btn btn-info') Registar     
 
-        div(class="alert alert-block  fade in")
+        div(class="alert alert-block fade in")
           button(type="button", class="close", data-dismiss="alert") ×
           h4(class="alert-heading")= mensaje

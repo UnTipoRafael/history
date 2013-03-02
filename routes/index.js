@@ -52,7 +52,6 @@ exports.registro= function(req, res){
 
 exports.autenticar=  function(req, res){
 	var objBD = BD();
-
 	var user = req.body.user;
 	var pw = req.body.pw;
   objBD.query('SELECT * FROM user WHERE nick ="'+user+'" AND password = "'+pw+'"', function(error, resultado, fila){
