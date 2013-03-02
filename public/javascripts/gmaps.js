@@ -3,15 +3,19 @@ function initialize(position ) {
   //alert(myLatLng);
   var mapOptions = {
     center: myLatLng,
-    zoom: 18,
+    zoom: 15,
     mapTypeId: google.maps.MapTypeId.SATELLITE
   };
 
   var map = new google.maps.Map(document.getElementById("map_canvas"),
       mapOptions);
 
+var a='<h1>Nueva<br/> Historia</h1>';
+a=a+'<span>Comparte tus historias<br> y de tu localidad<br/>Cuentos, noticias de interes<br/></span>';
+a=a+'<span>pequeñas historias con gran valor <br/> narra tu propia historia <br/> cuantala a el mundo</span>';
+
 var infowindow = new google.maps.InfoWindow({
-    content: "Estas aqui"
+    content: a
   });
 
   var marker = new google.maps.Marker({
