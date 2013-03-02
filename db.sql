@@ -1,8 +1,9 @@
 create table user(
 	id INT NOT NULL AUTO_INCREMENT primary key,
-	id_fb INT NOT NULL unique,
-	nombre varchar(10) NOT NULL unique,
-	password varchar(10) NOT NULL
+	id_fb bigint,
+	nick varchar(10) NOT NULL unique,
+	password varchar(10) NOT NULL,
+	email varchar(30) NOT NULL unique
 );
 
 
@@ -24,5 +25,5 @@ create table history(
 
 create table type(
 	id INT NOT NULL AUTO_INCREMENT primary key,
-	nombre varchar(20) not null unique
+	name varchar(20) not null unique
 );

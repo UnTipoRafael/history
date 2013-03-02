@@ -25,14 +25,19 @@ block content
             button(class='btn btn-info') Entrar
       
     
-      div(class='offset0 span3')   
+      div(class='offset0 span3')
+     
         fieldset
           legend Registrate
           form(action='/registro', method='post')
             label(for='n-user')
-              input(type='text', id='n-user', name='n-user', placeholder='Usuario')
+              input(type='text', id='n-user', name='n_user', placeholder='Usuario')
             label(for='n-pw')
-              input(type='password', id='n-pw', name='n-pw', placeholder='Contraseña')
+              input(type='password', id='n-pw', name='n_pw', placeholder='Contraseña')
             label(for='n-email')
-              input(type='email', id='n-email', name='n-email', placeholder='Email')
+              input(type='email', id='n-email', name='n_email', placeholder='Email')
             button(class='btn btn-info') Registar     
+
+        div(class="alert alert-block  fade in")
+          button(type="button", class="close", data-dismiss="alert") ×
+          h4(class="alert-heading")= mensaje

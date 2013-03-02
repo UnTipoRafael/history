@@ -13,7 +13,7 @@ function BD(){
 
 
 exports.index = function(req, res){
-  	res.render('index', { title: 'History' });
+  	res.render('index', { title: 'History',mensaje:'Registrate Ahora' });
 };
 
 exports.channel= function(req, res){
@@ -34,19 +34,30 @@ exports.salir= function(req, res){
   res.redirect('/');
 };
 
+exports.registro= function(req, res){
+  var objBD = BD();
+  var user = req.body.n_user;
+  var pw = req.body.n_pw;
+  var email = req.body.n_email;
+  objBD.query('insert into user values("","","'+user+'","'+pw+'","'+email+'")', function(error){
+    if(!error) {
+      console.log("error registro");
+      res.redirect('/login');
+    }else{
+      res.render('index', { title: 'Ingreso', mensaje:'Usuario ya existe elige otro' });
+    }
+  });
+};
+
 
 exports.autenticar=  function(req, res){
 	var objBD = BD();
-  console.log(objBD);
+
 	var user = req.body.user;
 	var pw = req.body.pw;
-  console.log(pw);
-  console.log(user);
-	console.log('SELECT * FROM user WHERE nick ="'+user+'" AND password = "'+pw+'"');
   objBD.query('SELECT * FROM user WHERE nick ="'+user+'" AND password = "'+pw+'"', function(error, resultado, fila){
     
     if(!error) {
-  	  console.log(resultado.length);
   	  if(resultado.length > 0){
   	    req.session.user = user;
   	    res.redirect('/usuario');
