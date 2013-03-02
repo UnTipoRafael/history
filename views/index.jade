@@ -1,21 +1,19 @@
 extends layout
 
 block content
-  div(class='container panel')    
+  div(class='panel')    
     div(class='row')
       div(class='span4')
 
-        div(id='map-all', class='span1')
+        div(id='map-all', class='span5')
           div(id="map_canvas", style='width:100%; height:100%')
             
-        div(class='btn-group')
-          button(class='btn btn-info') FB
-          button(class='btn btn-info') TW
-          button(class='btn btn-info') G+
-      div(class='offset1 span3')
+
+
+      div(class='offset2 span2')
         fieldset
           legend Ingresa
-          form(action='/autenticar', method='post')
+          form(action='/autenticar', method='post' ,class='form-inline')
             label(for='user')
               input(type='text', id='user', name='user', placeholder='Usuario' ,required)
             label(for='pw')
@@ -23,11 +21,11 @@ block content
             button(class='btn btn-info') Entrar
       
     
-      div(class='offset0 span3')
+      div(class='offset1 span2')
      
         fieldset
           legend Registrate
-          form(action='/registro', method='post')
+          form(action='/registro', method='post' ,class='form-inline')
             label(for='n-user')
               input(type='text', id='n-user', name='n_user', placeholder='Usuario', required)
             label(for='n-pw')
@@ -35,7 +33,9 @@ block content
             label(for='n-email')
               input(type='email', id='n-email', name='n_email', placeholder='Email', pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", required)
             button(class='btn btn-info') Registar     
-
+        
+        button(class='btn') Facebook
+        
         div(class="alert alert-block fade in")
           button(type="button", class="close", data-dismiss="alert") ×
           h4(class="alert-heading")= mensaje

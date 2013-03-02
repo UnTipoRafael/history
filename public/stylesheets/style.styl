@@ -1,7 +1,6 @@
 body
-  margin:5px
-  padding:5px
-  background:#E6E2C7
+
+  margin-top:5%
 
 .main>div
   display:inline-block
@@ -26,19 +25,30 @@ body
 
 #map
   background:#ccc
+
 input
-  width:150px
+  width:120px
+
+
+/****/
 .panel
-  margin-top:5%
+  margin: 0px 2%
 
 .panel>div
-  border:solid #ccc 5px
-  border-radius: 50px
+  border-radius:10px
+  box-shadow: 0px 0px 150px #999 ,0px 0px 10px peru
   background:rgba(#ccc,0.5)
 
+
+.panel>div
+  margin:0px
+  padding:0px
+
+
+/**/
 #map-all
-  width:300px
-  height:400px
+  width:350px
+  height:350px
 
 /* Large desktop */
 @media (min-width: 1200px) 
@@ -52,8 +62,10 @@ input
     height:500px
     width: 300px
 
+
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px)
+
   #map
     height: 500px
     width: 500px
@@ -63,12 +75,16 @@ input
     height: 500px
 
   #h
-          lefft
+
     height:500px
     width: 250px
 
+
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px)
+@media (max-width: 767px)}
+
+
+
   #map
     height: 300px
 
@@ -76,3 +92,5 @@ input
 @media (max-width: 480px)
   #map
     height: 200px
+
+
