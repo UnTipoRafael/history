@@ -48,6 +48,7 @@ app.get('/login', routes.login);
 app.get('/usuario',login, routes.privada);
 app.post('/autenticar', routes.autenticar);
 app.post('/registro', routes.registro);
+app.get('/registro/fb', routes.registroFB);
 app.get('/salir', routes.salir);
 
 

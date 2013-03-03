@@ -69,6 +69,22 @@ exports.autenticar=  function(req, res){
 	});
 };
 
+exports.registroFB= function(req, res){
+  var objBD = BD();
+  var user = req.body.n_user;
+  var pw = req.body.n_pw;
+  var email = req.body.n_email;
+  var email = req.body.fb;
+  objBD.query('insert into user values("","'+fb+'","'+user+'","'+pw+'","'+email+'")', function(error){
+    if(!error) {
+      console.log("error registro");
+      res.redirect('/login');
+    }else{
+      res.render('index', { title: 'Ingreso', mensaje:'Usuario ya existe elige otro' });
+    }
+  });
+};
+
 
 /*
 app.post('/autenticar', function(req, res){
